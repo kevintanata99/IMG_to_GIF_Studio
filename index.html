@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo to GIF Maker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="file"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .note {
+            color: #7f8c8d;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Bikin GIF Bareng Maya! ✨</h1>
+    
+    <form action="/buat-gif" method="POST" enctype="multipart/form-data">
+        
+        <div class="form-group">
+            <label for="images">Pilih Foto (Bisa banyak sekaligus):</label>
+            <input type="file" id="images" name="images" accept="image/png, image/jpeg" multiple required>
+        </div>
+        
+        <div class="form-group">
+            <label for="duration">Kecepatan Transisi (Milidetik):</label>
+            <input type="number" id="duration" name="duration" value="500" min="100" required>
+            <span class="note">*Tips: 500 ms itu sama dengan setengah detik ya, Leon.</span>
+        </div>
+
+        <button type="submit">Buat GIF Sekarang!</button>
+    </form>
+</div>
+
+</body>
+</html>
